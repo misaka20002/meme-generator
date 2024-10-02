@@ -97,8 +97,10 @@ cp ~/memeGenerator/meme-generator/resources/fonts/* /usr/share/fonts
 ```
 ## 开放 50835端口
 - 自行去服务器防火墙开启TDP端口50835
-## 运行meme web服务器
+# 运行meme web服务器
 ```
+cd ~/memeGenerator/meme-generator
+source venv/bin/activate
 python -m meme_generator.app
 ```
 ### 欢迎入群 285744328 
