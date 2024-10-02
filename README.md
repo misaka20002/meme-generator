@@ -1,3 +1,114 @@
+# Ubuntu中的meme生成器的安装步骤
+
+## 下载源码
+```
+mkdir ~/memeGenerator
+```
+```
+cd ~/memeGenerator
+```
+```
+git clone https://github.com/misaka20002/meme-generator.git
+```
+## 创建虚拟环境安装依赖
+```
+cd ~/memeGenerator/meme-generator
+```
+```
+venv\Scripts\activate
+```
+```
+source venv/bin/activate
+```
+```
+python -m pip install .
+```
+## 创建配置文件
+```
+mkdir ~/.config/meme_generator
+```
+```
+vim ~/.config/meme_generator/config.toml
+```
+粘贴以下内容
+```toml
+[meme]
+load_builtin_memes = true  # 是否加载内置表情包
+meme_dirs = ["/root/memeGenerator/meme-generator-contrib/memes"]  # 加载其他位置的表情包，填写文件夹路径
+meme_disabled_list = []  # 禁用的表情包列表，填写表情的 `key`
+
+[resource]
+# 下载内置表情包图片时的资源链接，下载时选择最快的站点
+resource_urls = [
+  "https://raw.githubusercontent.com/MeetWq/meme-generator/",
+  "https://ghproxy.com/https://raw.githubusercontent.com/MeetWq/meme-generator/",
+  "https://fastly.jsdelivr.net/gh/MeetWq/meme-generator@",
+  "https://raw.fastgit.org/MeetWq/meme-generator/",
+  "https://raw.fgit.ml/MeetWq/meme-generator/",
+  "https://raw.gitmirror.com/MeetWq/meme-generator/",
+  "https://raw.kgithub.com/MeetWq/meme-generator/",
+]
+
+[gif]
+gif_max_size = 10.0  # 限制生成的 gif 文件大小，单位为 Mb
+gif_max_frames = 100  # 限制生成的 gif 文件帧数
+
+[translate]
+baidu_trans_appid = ""  # 百度翻译api相关，表情包 `dianzhongdian` 需要使用
+baidu_trans_apikey = ""  # 可在 百度翻译开放平台 (http://api.fanyi.baidu.com) 申请
+
+[server]
+host = "0.0.0.0"  # web server 监听地址
+port = 50835  # web server 端口
+
+[log]
+log_level = "INFO"  # 日志等级
+```
+vim保存文件
+```
+:wq 
+```
+## 下载图片
+- 下载默认图片
+```
+python -m meme_generator.cli meme download
+```
+- 可选：
+  - 查看帮助
+    ```
+    python -m meme_generator.cli meme help
+    ```
+- 下载额外图片
+```
+mkdir /root/memeGenerator
+```
+```
+cd /root/memeGenerator
+```
+```
+git clone https://github.com/misaka20002/meme-generator-contrib.git
+```
+## 安装字体
+```
+sudo apt install fonts-noto-cjk fonts-noto-color-emoji
+```
+```
+cp ~/memeGenerator/meme-generator/resources/fonts/* /usr/share/fonts
+```
+## 开放 50835端口
+- 自行去服务器防火墙开启TDP端口50835
+## 运行meme web服务器
+```
+python -m meme_generator.app
+```
+### 欢迎入群 285744328 
+# 完
+
+
+
+
+
+
 <div align="center">
 
 <img src="https://s2.loli.net/2023/03/26/4URd1BKj3ToycLl.png" width=200 />
