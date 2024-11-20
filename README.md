@@ -1,33 +1,33 @@
 # Ubuntu中的meme生成器的安装步骤
 
 ## 下载源码
-```
+```bash
 mkdir ~/memeGenerator
 ```
-```
+```bash
 cd ~/memeGenerator
 ```
-```
+```bash
 git clone https://github.com/misaka20002/meme-generator.git
 ```
 ## 创建虚拟环境安装依赖
-```
+```bash
 cd ~/memeGenerator/meme-generator
 ```
-```
+```bash
 venv\Scripts\activate
 ```
-```
+```bash
 source venv/bin/activate
 ```
-```
+```bash
 python -m pip install .
 ```
 ## 创建配置文件
-```
+```bash
 mkdir ~/.config/meme_generator
 ```
-```
+```bash
 vim ~/.config/meme_generator/config.toml
 ```
 粘贴以下内容
@@ -65,12 +65,12 @@ port = 50835  # web server 端口
 log_level = "INFO"  # 日志等级
 ```
 vim保存文件
-```
+```bash
 :wq 
 ```
 ## 下载图片
 - 下载默认图片
-```
+```bash
 python -m meme_generator.cli meme download
 ```
 - 可选：
@@ -79,30 +79,38 @@ python -m meme_generator.cli meme download
     python -m meme_generator.cli meme help
     ```
 - 下载额外图片
-```
+```bash
 mkdir /root/memeGenerator
 ```
-```
+```bash
 cd /root/memeGenerator
 ```
-```
+```bash
 git clone https://github.com/misaka20002/meme-generator-contrib.git
 ```
 ## 安装字体
-```
+```bash
 sudo apt install fonts-noto-cjk fonts-noto-color-emoji
 ```
-```
+```bash
 cp ~/memeGenerator/meme-generator/resources/fonts/* /usr/share/fonts
 ```
 ## 开放 50835端口
 - 自行去服务器防火墙开启TDP端口50835
 # 运行meme web服务器
-```
+```bash
 cd ~/memeGenerator/meme-generator
 source venv/bin/activate
 python -m meme_generator.app
 ```
+## 报错
+### 若报错 ImportError: libGL.so.1: cannot open shared object file: No such file or directory
+- 这个错误通常是由于缺少OpenGL库引起的（重新安装了一次依赖不行，是原作者没写入这个依赖进去）
+```bash
+sudo apt-get update
+sudo apt-get install python3-opengl
+```
+
 ### 欢迎入群 285744328 
 # 完
 
