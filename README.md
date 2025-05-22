@@ -8,7 +8,7 @@ mkdir ~/memeGenerator
 cd ~/memeGenerator
 ```
 ```bash
-git clone https://github.com/misaka20002/meme-generator.git
+git clone https://github.com/MemeCrafters/meme-generator.git
 ```
 ## 创建虚拟环境安装依赖
 ```bash
@@ -34,7 +34,7 @@ vim ~/.config/meme_generator/config.toml
 ```toml
 [meme]
 load_builtin_memes = true  # 是否加载内置表情包
-meme_dirs = ["/root/memeGenerator/meme-generator-contrib/memes"]  # 加载其他位置的表情包，填写文件夹路径
+meme_dirs = ["/root/memeGenerator/meme-generator-contrib/memes", "/root/memeGenerator/meme_emoji/emoji"]  # 加载其他位置的表情包，填写文件夹路径
 meme_disabled_list = []  # 禁用的表情包列表，填写表情的 `key`
 
 [resource]
@@ -78,7 +78,7 @@ python -m meme_generator.cli meme download
     ```
     python -m meme_generator.cli meme help
     ```
-- 下载额外图片
+- 下载额外图片 - 1
 ```bash
 mkdir /root/memeGenerator
 ```
@@ -86,8 +86,20 @@ mkdir /root/memeGenerator
 cd /root/memeGenerator
 ```
 ```bash
-git clone https://github.com/misaka20002/meme-generator-contrib.git
+git clone https://github.com/MemeCrafters/meme-generator-contrib.git
 ```
+
+- 下载额外图片 - 2
+```bash
+mkdir /root/memeGenerator
+```
+```bash
+cd /root/memeGenerator
+```
+```bash
+git clone https://github.com/anyliew/meme_emoji.git
+```
+
 ## 安装字体
 ```bash
 sudo apt install fonts-noto-cjk fonts-noto-color-emoji
