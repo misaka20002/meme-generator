@@ -22,7 +22,17 @@ class MemeTags:
     # 蔚蓝档案
     blue_archive = {"蔚蓝档案", "碧蓝档案"}
 
+    arisu = {"天童爱丽丝"} | blue_archive
+    izuna = {"久田泉奈", "忍忍"} | blue_archive
+    key = {"key"} | blue_archive
+    kokona = {"春原心奈", "春原心菜"} | blue_archive
+    mari = {"伊落玛丽"} | blue_archive
+    sena = {"冰室濑名"} | blue_archive
     shiroko = {"砂狼白子"} | blue_archive
+    yuuka = {"早濑优香", "邮箱"} | blue_archive
+
+    arona = {"阿罗娜"} | blue_archive
+    plana = {"普拉娜"} | blue_archive
 
     # 公主连结
     re_dive = {"公主连结"}
@@ -74,6 +84,9 @@ class MemeTags:
 
     konata = {"泉此方"} | lucky_star
 
+    # 凉宫春日
+    haruhi = {"凉宫春日"}
+
     # 猫和老鼠
     tom_and_jerry = {"猫和老鼠"}
 
@@ -90,6 +103,7 @@ class MemeTags:
 
     # VOCALOID
     miku = {"初音未来"}
+    luotianyi = {"洛天依"}
 
     # 明日方舟
     arknights = {"明日方舟"}
@@ -100,11 +114,30 @@ class MemeTags:
     # 舞萌
     maimai = {"舞萌"}
 
+    # 学园偶像大师
+    gakuen_imas = {"学园偶像大师"}
+
+    kotone = {"藤田琴音"} | gakuen_imas
+
     # 哈利·波特
     harry_potter = {"哈利·波特"}
+
+    # 鸣潮
+    wuthering_waves = {"鸣潮"}
+
+    jinhsi = {"今汐"} | wuthering_waves
+
+    # 世界计划
+    project_sekai = {"世界计划"}
+
+    # 魔女的夜宴
+    yuzu_soft = {"柚子社"}
+    sabbat_of_the_witch = {"魔女的夜宴"} | yuzu_soft
+    ayachi = {"绫地宁宁"} | sabbat_of_the_witch
 
     # 其他
     capoo = {"猫猫虫", "咖波"}
     nekoha = {"猫羽雫"}
     kirby = {"星之卡比"}
     atri = {"亚托莉", "ATRI", "萝卜子"}
+    stickman = {"火柴人"}
