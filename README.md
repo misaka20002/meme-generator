@@ -1,4 +1,14 @@
-# Ubuntu中的meme生成器的安装步骤
+# 使用脚本搭建meme服务器
+
+    ```sh
+    bash <(curl -sL https://raw.githubusercontent.com/misaka20002/Bot-Install-Shell/refs/heads/master/Manage/meme_generator.sh)
+    # 或使用 ghfast 加速：
+    # bash <(curl -sL https://ghfast.top/https://raw.githubusercontent.com/misaka20002/Bot-Install-Shell/refs/heads/master/Manage/meme_generator.sh)
+    ```
+
+---
+
+# Ubuntu中的meme生成器的（手动）安装步骤
 
 ## 下载源码
 ```bash
